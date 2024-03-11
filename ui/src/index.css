@@ -1,0 +1,12 @@
+.title {
+  margin-left: 50%;
+  margin-top: 20px;
+}
+.task {
+  display: inline;
+  vertical-align: middle;
+}
+.block {
+  margin-left: 50%;
+  width: 300px;
+}
