@@ -7,6 +7,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import UpdateTaskForm from "./UpdateTaskForm";
 import classnames from "classnames";
 import axios from "axios";
+import { API_URL } from "../utils";
 
 const Tasks = ({ task, fetchTasks }) => {
   const { id, name, completed } = task;
@@ -18,16 +19,16 @@ const Tasks = ({ task, fetchTasks }) => {
       await axios.put(API_URL, { id, name, completed: !isComplete });
       setIsComplete((prev) => !prev);
     } catch (e) {
-      console.log("Error is ${e}");
+      console.log("Error ");
     }
   };
 
   const handleDelete = async () => {
     try {
-      await axios.delete("${API_URL}/${task.id}");
+      await axios.delete(`${API_URL}/${task.id}`);
       await fetchTasks();
     } catch (e) {
-      console.log("Error is ${e}");
+      console.log("Error");
     }
   };
   return (

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { API_URL } from "util";
 
 import { TextField, Typography, Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
+import { API_URL } from "../utils";
+
 const AddTaskForm = () => {
   const [newTask, setNewTask] = useState("");
 
@@ -16,7 +17,7 @@ const AddTaskForm = () => {
       fetchTasks();
       setNewTask("");
     } catch (e) {
-      console.log("Errror ${e}");
+      console.log("Errror");
     }
   }
   return (

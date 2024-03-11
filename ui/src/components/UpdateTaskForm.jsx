@@ -2,6 +2,7 @@ import { Dialog, TextField, Button, DialogTitle } from "@mui/material";
 import React, { useState } from "react";
 import CheckIcon from "@mui/icons-material/Check";
 import axios from "axios";
+import { API_URL } from "../utils";
 
 const UpdateTaskForm = ({
   IsDialogOpen,
@@ -22,7 +23,7 @@ const UpdateTaskForm = ({
       await fetchTasks();
       setTaskName("");
     } catch (e) {
-      console.log("Error is ${e}");
+      console.log("Error ");
     }
   };
   return (
