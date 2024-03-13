@@ -17,7 +17,7 @@ const AddTaskForm = () => {
       await fetchTasks();
       setNewTask("");
     } catch (e) {
-      console.log("Errror");
+      console.log("Errror" + e);
     }
   }
   return (
