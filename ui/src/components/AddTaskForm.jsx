@@ -5,10 +5,10 @@ import { Typography, Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { API_URL } from "../utils";
 
-const AddTaskForm = () => {
+const AddTaskForm = ({ fetchTasks }) => {
   const [newTask, setNewTask] = useState("");
 
-  const addNewTask = async ({ fetchTasks }) => {
+  const addNewTask = async () => {
     try {
       await axios.post(API_URL, {
         name: newTask,
@@ -17,7 +17,7 @@ const AddTaskForm = () => {
       await fetchTasks();
       setNewTask("");
     } catch (e) {
-      console.log("Error" + e);
+      console.log(" Error " + e);
     }
   };
   return (
