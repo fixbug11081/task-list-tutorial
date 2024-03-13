@@ -8,7 +8,7 @@ import { API_URL } from "../utils";
 const AddTaskForm = () => {
   const [newTask, setNewTask] = useState("");
 
-  const addNewTask = async ({ fetchTasks }) {
+  const addNewTask = async ({ fetchTasks }) => {
     try {
       await axios.post(API_URL, {
         name: newTask,
@@ -19,7 +19,7 @@ const AddTaskForm = () => {
     } catch (e) {
       console.log("Error" + e);
     }
-  }
+  };
   return (
     <div className="title">
       <Typography variant="h4">My Task List</Typography>
