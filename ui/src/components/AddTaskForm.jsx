@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
-
-import { TextField, Typography, Button } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import { Typography, Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { API_URL } from "../utils";
 
 const AddTaskForm = () => {
   const [newTask, setNewTask] = useState("");
 
-  async function addNewTask({ fetchTasks }) {
+  const addNewTask = async ({ fetchTasks }) {
     try {
       await axios.post(API_URL, {
         name: newTask,
@@ -17,7 +17,7 @@ const AddTaskForm = () => {
       await fetchTasks();
       setNewTask("");
     } catch (e) {
-      console.log("Errror" + e);
+      console.log("Error" + e);
     }
   }
   return (
